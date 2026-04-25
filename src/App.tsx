@@ -26,12 +26,12 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import logo from './images/logo.jpeg';
-import image1 from './images/image1.jpeg';
-import image2 from './images/image2.jpeg';
-import image3 from './images/image3.jpeg';
-import image4 from './images/image4.jpeg';
-import image5 from './images/image5.jpeg';
-import image from './images/image.jpeg';
+import imgVerticalGeyser from './images/Vertical Geyser Installation & Safety Inspection.jpeg';
+import imgKitchenFixture from './images/Kitchen & Bathroom Fixture Upgrades.jpeg';
+import imgBurstPipe from './images/Burst Pipe Repairs.jpeg';
+import imgHorizontalGeyser from './images/Horizontal Geyser Mounting & Insulation.jpeg';
+import imgMainLine from './images/Main Line & External Drainage Excavation.jpeg';
+import imgUnderSink from './images/Under-Sink Drainage & Pipe Maintenance.jpeg';
 
 const FadeInWhenVisible = ({ children, delay = 0 }: { children: React.ReactNode, delay?: number, key?: string | number }) => {
   return (
@@ -91,10 +91,27 @@ const App = () => {
     setPhoneError('');
     setFormStatus('submitting');
 
-    // Simulate API call
-    setTimeout(() => {
-      setFormStatus('success');
-    }, 1500);
+    fetch('https://formsubmit.co/ajax/mapsgroupsolutions@gmail.com', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.get('name'),
+        phone,
+        email: formData.get('email'),
+        message: formData.get('message')
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        setFormStatus('success');
+      })
+      .catch(error => {
+        console.log(error);
+        setFormStatus('idle');
+      });
   };
 
   const navLinks = [
@@ -179,10 +196,10 @@ const App = () => {
   ];
 
   const galleryImages = [
-    { src: image1, alt: 'Vertical Geyser Installation' },
-    { src: image2, alt: 'Professional Plumbing Finish' },
-    { src: image3, alt: 'Burst Pipe Repair Service' },
-    { src: image4, alt: 'Horizontal Geyser Maintenance' },
+    { src: imgVerticalGeyser, alt: 'Vertical Geyser Installation' },
+    { src: imgKitchenFixture, alt: 'Professional Plumbing Finish' },
+    { src: imgBurstPipe, alt: 'Burst Pipe Repair Service' },
+    { src: imgHorizontalGeyser, alt: 'Horizontal Geyser Maintenance' },
   ];
 
   return (
@@ -226,9 +243,9 @@ const App = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.05 }}
-              className="btn-primary !py-2.5 !px-6 !text-xs !rounded-full shadow-brand-red/40 animate-bounce-subtle whitespace-nowrap ml-4"
+              className="bg-brand-blue text-white py-2.5 px-6 font-bold text-xs rounded-full shadow-brand-blue/40 whitespace-nowrap ml-4 transition-all hover:bg-blue-800"
             >
-              Emergency Call
+              Get a Quote
             </motion.a>
           </div>
 
@@ -283,7 +300,7 @@ const App = () => {
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient pt-20">
         <motion.div style={{ opacity: heroOpacity, scale: heroScale }} className="absolute inset-0 z-0">
           <img
-            src={image5}
+            src={imgMainLine}
             alt="MAPS SOLUTIONS Team on site"
             className="w-full h-full object-cover mix-blend-overlay opacity-40"
             referrerPolicy="no-referrer"
@@ -299,12 +316,9 @@ const App = () => {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center justify-center space-y-8 py-24 text-center"
             >
-              <div className="inline-flex items-center gap-2 bg-brand-red/20 backdrop-blur-md border border-brand-red/30 text-brand-red px-6 py-2 rounded-full text-xs font-black uppercase tracking-[0.3em] emergency-pulse">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red"></span>
-                </span>
-                Emergency Services 24/7
+              <div className="inline-flex items-center gap-2 bg-brand-blue/10 backdrop-blur-md border border-brand-blue/20 text-brand-blue px-6 py-2 rounded-full text-xs font-black uppercase tracking-[0.3em]">
+                <ShieldCheck className="w-4 h-4" />
+                Licensed & Professional
               </div>
 
               <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter">
@@ -328,8 +342,8 @@ const App = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
-                <a href="#contact" className="btn-primary group !px-10 w-full sm:w-auto">
-                  Emergency Call
+                <a href="#contact" className="bg-brand-blue text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:bg-blue-800 hover:scale-[1.02] shadow-lg shadow-brand-blue/30 flex items-center justify-center gap-2 group w-full sm:w-auto">
+                  Contact Us
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a href="#services" className="btn-outline !border-white/30 !text-white hover:!bg-white hover:!text-brand-blue backdrop-blur-sm w-full sm:w-auto">
@@ -449,7 +463,7 @@ const App = () => {
                 <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-blue/10 rounded-full blur-3xl" />
                 <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-brand-red/10 rounded-full blur-3xl" />
                 <img
-                  src={image}
+                  src={imgUnderSink}
                   alt="MAPS SOLUTIONS Professional at work"
                   className="rounded-[2.5rem] shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-700"
                   referrerPolicy="no-referrer"
@@ -670,8 +684,13 @@ const App = () => {
                 The preferred choice for professional construction and maintenance. Delivering excellence across Cape Town with a commitment to quality and safety.
               </p>
               <div className="flex gap-4">
-                {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                  <a key={i} href="#" className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-brand-red transition-all border border-white/5">
+                {[
+                  { Icon: Facebook, url: "https://www.facebook.com/share/1XMQhb6cUs/" },
+                  { Icon: Twitter, url: "https://twitter.com" },
+                  { Icon: Instagram, url: "https://instagram.com" },
+                  { Icon: Linkedin, url: "https://linkedin.com" }
+                ].map(({ Icon, url }, i) => (
+                  <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-brand-red transition-all border border-white/5">
                     <Icon className="w-5 h-5" />
                   </a>
                 ))}
@@ -722,19 +741,16 @@ const App = () => {
         </div>
       </footer>
 
-      {/* Sticky Mobile Emergency Button */}
+      {/* Sticky Mobile Button */}
       <div className="fixed bottom-6 left-6 right-6 z-[60] md:hidden">
         <motion.a
           href="tel:0616527539"
           initial={{ y: 100 }}
           animate={{ y: 0 }}
-          className="bg-brand-red text-white py-4 px-6 rounded-2xl shadow-2xl flex items-center justify-between font-black uppercase tracking-widest text-sm emergency-pulse"
+          className="bg-brand-blue text-white py-4 px-6 rounded-2xl shadow-2xl flex items-center justify-center gap-3 font-black uppercase tracking-widest text-sm"
         >
-          <div className="flex items-center gap-3">
-            <PhoneCall className="w-5 h-5" />
-            Emergency Call
-          </div>
-          <span className="bg-white/20 px-3 py-1 rounded-lg text-xs">24/7</span>
+          <PhoneCall className="w-5 h-5" />
+          Call Us Now
         </motion.a>
       </div>
     </div>
