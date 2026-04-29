@@ -29,7 +29,7 @@ import logo from './images/logo.jpeg';
 import imgCeilingGeyser from './images/Ceiling Geyser Installation & Safety Inspection.jpeg';
 import imgKitchenFixture from './images/Kitchen & Bathroom Fixture Upgrades.jpeg';
 import imgBurstPipe from './images/Burst Pipe Repairs.jpeg';
-import imgHorizontalGeyser from './images/Horizontal Geyser Mounting & Insulation.jpeg';
+import imgVerticalGeyser from './images/Vertical Geyser Installation.jpeg';
 import imgMainLine from './images/Main Line & External Drainage Excavation.jpeg';
 import imgUnderSink from './images/Under-Sink Drainage & Pipe Maintenance.jpeg';
 
@@ -199,7 +199,7 @@ const App = () => {
     { src: imgCeilingGeyser, alt: 'Ceiling Geyser Installation' },
     { src: imgKitchenFixture, alt: 'Professional Plumbing Finish' },
     { src: imgBurstPipe, alt: 'Burst Pipe Repair Service' },
-    { src: imgHorizontalGeyser, alt: 'Horizontal Geyser Maintenance' },
+    { src: imgVerticalGeyser, alt: 'Vertical Geyser Installation' },
   ];
 
   return (
