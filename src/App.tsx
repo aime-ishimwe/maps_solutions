@@ -47,7 +47,7 @@ const FadeInWhenVisible = ({ children, delay = 0 }: { children: React.ReactNode,
 };
 
 const Logo = ({ className = "w-12 h-12" }: { className?: string }) => (
-  <img src={logo} className={`${className} object-contain rounded-xl`} alt="MAPS SOLUTIONS Logo" />
+  <img src={logo} className={`${className} object-contain rounded-xl`} alt="MAPS SOLUTIONS Logo" decoding="async" />
 );
 
 const App = () => {
@@ -303,6 +303,8 @@ const App = () => {
             src={imgMainLine}
             alt="MAPS SOLUTIONS Team on site"
             className="w-full h-full object-cover mix-blend-overlay opacity-40"
+            fetchPriority="high"
+            decoding="async"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/20 to-brand-blue/60" />
@@ -442,6 +444,8 @@ const App = () => {
                     src={img.src}
                     alt={img.alt}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
@@ -466,6 +470,8 @@ const App = () => {
                   src={imgUnderSink}
                   alt="MAPS SOLUTIONS Professional at work"
                   className="rounded-[2.5rem] shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-700"
+                  loading="lazy"
+                  decoding="async"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute -bottom-12 -right-12 bg-brand-blue p-10 rounded-3xl shadow-2xl z-20 hidden md:block">
@@ -720,6 +726,8 @@ const App = () => {
                   <img
                     src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&q=80&w=400"
                     alt="Cape Town Map"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover opacity-30 grayscale"
                     referrerPolicy="no-referrer"
                   />
