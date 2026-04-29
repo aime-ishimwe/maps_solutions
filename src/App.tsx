@@ -26,7 +26,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import logo from './images/logo.jpeg';
-import imgVerticalGeyser from './images/Vertical Geyser Installation & Safety Inspection.jpeg';
+import imgCeilingGeyser from './images/Ceiling Geyser Installation & Safety Inspection.jpeg';
 import imgKitchenFixture from './images/Kitchen & Bathroom Fixture Upgrades.jpeg';
 import imgBurstPipe from './images/Burst Pipe Repairs.jpeg';
 import imgHorizontalGeyser from './images/Horizontal Geyser Mounting & Insulation.jpeg';
@@ -196,7 +196,7 @@ const App = () => {
   ];
 
   const galleryImages = [
-    { src: imgVerticalGeyser, alt: 'Vertical Geyser Installation' },
+    { src: imgCeilingGeyser, alt: 'Ceiling Geyser Installation' },
     { src: imgKitchenFixture, alt: 'Professional Plumbing Finish' },
     { src: imgBurstPipe, alt: 'Burst Pipe Repair Service' },
     { src: imgHorizontalGeyser, alt: 'Horizontal Geyser Maintenance' },
@@ -373,7 +373,7 @@ const App = () => {
               <FadeInWhenVisible key={service.title} delay={idx * 0.1}>
                 <div className={`service-card group ${service.color}`}>
                   <div className="mb-10 p-5 bg-slate-50 rounded-2xl inline-block group-hover:bg-brand-blue group-hover:text-white transition-all duration-500 shadow-inner">
-                    {React.cloneElement(service.icon as React.ReactElement, { className: "w-12 h-12 transition-colors duration-500" })}
+                    {React.cloneElement(service.icon as React.ReactElement<{ className?: string }>, { className: "w-12 h-12 transition-colors duration-500" })}
                   </div>
                   <h4 className="text-3xl font-black mb-6 tracking-tight">{service.title}</h4>
                   <p className="text-slate-600 mb-10 leading-relaxed font-medium">{service.description}</p>
@@ -412,7 +412,7 @@ const App = () => {
               <FadeInWhenVisible key={value.name} delay={idx * 0.1}>
                 <div className="flex flex-col items-center text-center group">
                   <div className="w-24 h-24 bg-white/5 rounded-3xl flex items-center justify-center mb-8 group-hover:bg-brand-red group-hover:scale-110 transition-all duration-500 border border-white/10 shadow-2xl">
-                    {React.cloneElement(value.icon as React.ReactElement, { className: "w-10 h-10 text-brand-blue group-hover:text-white transition-colors" })}
+                    {React.cloneElement(value.icon as React.ReactElement<{ className?: string }>, { className: "w-10 h-10 text-brand-blue group-hover:text-white transition-colors" })}
                   </div>
                   <h4 className="text-2xl font-black mb-4 tracking-tight uppercase">{value.name}</h4>
                   <p className="text-slate-400 leading-relaxed font-medium">{value.desc}</p>
