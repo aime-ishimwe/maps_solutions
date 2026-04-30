@@ -29,7 +29,7 @@ import logo from './images/logo.jpeg';
 import imgCeilingGeyser from './images/Ceiling Geyser Installation & Safety Inspection.jpeg';
 import imgKitchenFixture from './images/Kitchen & Bathroom Fixture Upgrades.jpeg';
 import imgBurstPipe from './images/Burst Pipe Repairs.jpeg';
-import imgVerticalGeyser from './images/Vertical Geyser Installation.jpeg';
+import imgHorizontalGeyser from './images/Compliant Geyser Installation With Vacuum Breakers.jpeg';
 import imgMainLine from './images/Main Line & External Drainage Excavation.jpeg';
 import imgUnderSink from './images/Under-Sink Drainage & Pipe Maintenance.jpeg';
 
@@ -199,7 +199,7 @@ const App = () => {
     { src: imgCeilingGeyser, alt: 'Ceiling Geyser Installation' },
     { src: imgKitchenFixture, alt: 'Professional Plumbing Finish' },
     { src: imgBurstPipe, alt: 'Burst Pipe Repair Service' },
-    { src: imgVerticalGeyser, alt: 'Vertical Geyser Installation' },
+    { src: imgHorizontalGeyser, alt: 'Compliant Geyser Installation With Vacuum Breakers' },
   ];
 
   return (
@@ -218,7 +218,7 @@ const App = () => {
                 MAPS SOLUTIONS
               </span>
               <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400 mt-0.5">
-                Solutions Cape Town
+                Driven by Excellence
               </span>
             </div>
           </motion.div>
@@ -683,7 +683,7 @@ const App = () => {
                 <Logo className="w-16 h-16" />
                 <div className="flex flex-col">
                   <span className="text-2xl font-black tracking-tighter">MAPS SOLUTIONS</span>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-slate-500">Solutions Cape Town</span>
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-slate-500">Driven by Excellence</span>
                 </div>
               </div>
               <p className="text-slate-500 max-w-md mb-10 leading-relaxed font-medium">
