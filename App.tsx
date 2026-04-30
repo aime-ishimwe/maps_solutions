@@ -204,7 +204,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen selection:bg-brand-blue selection:text-white">
-      {/* Header */}
+      {/* Header */}v
       <header className={`fixed top-0 w-full z-50 transition-all duration-500 bg-white shadow-md py-3`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <motion.div
@@ -677,7 +677,7 @@ const App = () => {
                 <Logo className="w-16 h-16" />
                 <div className="flex flex-col">
                   <span className="text-2xl font-black tracking-tighter">MAPS SOLUTIONS</span>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-slate-500">Solutions Cape Town</span>
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-slate-500">Driven by Excellence</span>
                 </div>
               </div>
               <p className="text-slate-500 max-w-md mb-10 leading-relaxed font-medium">
